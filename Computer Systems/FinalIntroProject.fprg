@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nouran"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-01-10 03:27:13 PM"/>
+        <attribute name="created" value="bm91cmFuO0RFU0tUT1AtUE4zU0U2UjsyMDIyLTAxLTA0OzEwOjQ1OjE5IFBNOzMwMTQ="/>
+        <attribute name="edited" value="bm91cmFuO0RFU0tUT1AtUE4zU0U2UjsyMDIyLTAxLTA1OzEyOjE5OjQ1IEFNOzE7MzExMA=="/>
+        <attribute name="edited" value="TGVub3ZvbztMRU5PVk87MjAyMi0wMS0xMDsxMTowNzoxOSBBTTszOzI1NzE="/>
+        <attribute name="edited" value="TEVOT1ZPO0RFU0tUT1AtU0pHTUQ5NTsyMDIyLTAxLTEwOzAzOjI3OjEzIFBNOzEwOzI5NTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="Read"/>
+            <call expression="Age"/>
+            <declare name="StudentGender, FirstEnrolmentYear, FirstEnrolmentTerm, StudentDepartmentOfEnrolment, TutorNameAndCode, CurrentTerm, Payments, StudentContacts, CreditHours" type="String" array="False" size=""/>
+            <output expression="&quot;Please fill these informations &quot;" newline="True"/>
+            <output expression="&quot;Your Gender : male or female &quot;" newline="True"/>
+            <input variable="StudentGender"/>
+            <output expression="&quot;First Enrolment Year: &quot;" newline="True"/>
+            <input variable="FirstEnrolmentYear"/>
+            <output expression="&quot;First Enrolment Term: &quot;" newline="True"/>
+            <input variable="FirstEnrolmentTerm"/>
+            <output expression="&quot;Student department of enrolment: &quot;" newline="True"/>
+            <input variable="StudentDepartmentOfEnrolment"/>
+            <output expression="&quot;Tutor name and code: &quot;" newline="True"/>
+            <input variable="TutorNameAndCode"/>
+            <output expression="&quot;Current Term: &quot;" newline="True"/>
+            <input variable="CurrentTerm"/>
+            <call expression="Payments"/>
+            <call expression="StudentContacts"/>
+            <call expression="CreditHours"/>
+        </body>
+    </function>
+    <function name="Age" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="DayOfBirth, MonthOfBirth, YearOfBirth" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please fill these fields&quot;" newline="True"/>
+            <output expression="&quot;Day of birth &quot;" newline="True"/>
+            <input variable="DayOfBirth"/>
+            <declare name="BigOrSmall" type="Boolean" array="False" size=""/>
+            <if expression="DayOfBirth&gt;31||DayOfBirth&lt;1">
+                <then>
+                    <assign variable="BigOrSmall" expression="True"/>
+                </then>
+                <else>
+                    <assign variable="BigOrSmall" expression="False"/>
+                </else>
+            </if>
+            <while expression="BigOrSmall=True">
+                <output expression="&quot;Please enter a valid Day Of Birth&quot;" newline="True"/>
+                <input variable="DayOfBirth"/>
+                <if expression="DayOfBirth&gt;31||DayOfBirth&lt;1">
+                    <then>
+                        <assign variable="BigOrSmall" expression="True"/>
+                    </then>
+                    <else>
+                        <assign variable="BigOrSmall" expression="False"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Month of Birth&quot;" newline="True"/>
+            <input variable="MonthOfBirth"/>
+            <if expression="MonthOfBirth&gt;12||MonthOfBirth&lt;1">
+                <then>
+                    <assign variable="BigOrSmall" expression="True"/>
+                </then>
+                <else>
+                    <assign variable="BigOrSmall" expression="False"/>
+                </else>
+            </if>
+            <while expression="BigOrSmall=True">
+                <output expression="&quot;please enter a valid Month Of Birth&quot;" newline="True"/>
+                <input variable="MonthOfBirth"/>
+                <if expression="MonthOfBirth&gt;12||MonthOfBirth&lt;1">
+                    <then>
+                        <assign variable="BigOrSmall" expression="True"/>
+                    </then>
+                    <else>
+                        <assign variable="BigOrSmall" expression="False"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Year of Birth&quot;" newline="True"/>
+            <input variable="YearOfBirth"/>
+            <if expression="YearOfBirth&lt;1980||YearOfBirth&gt;2022">
+                <then>
+                    <assign variable="BigOrSmall" expression="true"/>
+                </then>
+                <else>
+                    <assign variable="BigOrSmall" expression="False"/>
+                </else>
+            </if>
+            <while expression="BigOrSmall=True">
+                <output expression="&quot;plese enter a valid Year Of Birth&quot;" newline="True"/>
+                <input variable="YearOfBirth"/>
+                <if expression="YearOfBirth&lt;1980||YearofBirth&gt;2022">
+                    <then>
+                        <assign variable="BigOrSmall" expression="True"/>
+                    </then>
+                    <else>
+                        <assign variable="BigOrSmall" expression="False"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;You are &quot; &amp; 2022-YearOfBirth &amp; &quot; years old&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="CreditHours" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Maximum, Finished, Current, Remaining" type="Integer" array="False" size=""/>
+            <output expression="&quot;What is your required for the degree? &quot;" newline="True"/>
+            <input variable="Maximum"/>
+            <output expression="&quot;your finished hours is: &quot;" newline="True"/>
+            <input variable="Finished"/>
+            <output expression="&quot;Your current hours is: &quot;" newline="True"/>
+            <input variable="Current"/>
+            <assign variable="Remaining" expression="Maximum-Finished-Current"/>
+            <output expression="&quot;Your remaining hours is: &quot;&amp; Remaining" newline="True"/>
+        </body>
+    </function>
+    <function name="Payments" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="TypeOfFunding" type="String" array="False" size=""/>
+            <declare name="NumberOfPayments, TotalAmount, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please fill the payments details&quot;" newline="True"/>
+            <output expression="&quot;Type of Funding: Self-Funded OR Grant-Funded?&quot;" newline="True"/>
+            <input variable="TypeOfFunding"/>
+            <output expression="&quot;Number of Payments done&quot;" newline="True"/>
+            <input variable="NumberOfPayments"/>
+            <output expression="&quot;Total amount paid so far&quot;" newline="True"/>
+            <input variable="TotalAmount"/>
+        </body>
+    </function>
+    <function name="Read" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FirstName, MiddleName, LastName, TypeOfID, StreetName, AreaorDistrictName, CityName, GovernorateName, Country, Address, Nationality" type="String" array="False" size=""/>
+            <declare name="RegistrationNumber, IDNumber, FlatNumber, HouseNumber, PostalCode" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your First Name: &quot;" newline="True"/>
+            <input variable="FirstName"/>
+            <output expression="&quot;Enter your Middle Name: &quot;" newline="True"/>
+            <input variable="MiddleName"/>
+            <output expression="&quot;Enter your Last Name: &quot;" newline="True"/>
+            <input variable="LastName"/>
+            <declare name="flag" type="Boolean" array="False" size=""/>
+            <assign variable="flag" expression="false"/>
+            <output expression="&quot;Enter your Registration Number: &quot;" newline="True"/>
+            <input variable="RegistrationNumber"/>
+            <while expression="flag==false">
+                <if expression="RegistrationNumber&gt;=202201">
+                    <then>
+                        <assign variable="flag" expression="true"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Please check your registration number&quot;" newline="True"/>
+                        <output expression="&quot;Enter a valid registration number: &quot;" newline="True"/>
+                        <input variable="RegistrationNumber"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;What is your nationality&quot;" newline="True"/>
+            <input variable="Nationality"/>
+            <output expression="&quot;What is your Type of ID ? National ID OR Passport ? &quot;" newline="True"/>
+            <input variable="TypeOfID"/>
+            <output expression="&quot;Enter your ID Number: &quot;" newline="True"/>
+            <input variable="IDNumber"/>
+            <output expression="&quot;Fill out your home address please &quot;" newline="True"/>
+            <output expression="&quot;Flat Number: &quot;" newline="True"/>
+            <input variable="FlatNumber"/>
+            <output expression="&quot;House Number: &quot;" newline="True"/>
+            <input variable="HouseNumber"/>
+            <output expression="&quot;Street Name&quot;" newline="True"/>
+            <input variable="StreetName"/>
+            <output expression="&quot;Area/District Name&quot;" newline="True"/>
+            <input variable="AreaOrDistrictName"/>
+            <output expression="&quot;City Name&quot;" newline="True"/>
+            <input variable="CityName"/>
+            <output expression="&quot;Governorate Name&quot;" newline="True"/>
+            <input variable="GovernorateName"/>
+            <output expression="&quot;Country&quot;" newline="True"/>
+            <input variable="Country"/>
+            <output expression="&quot;Postal Code&quot;" newline="True"/>
+            <input variable="PostalCode"/>
+            <declare name="YesOrNo" type="String" array="False" size=""/>
+            <output expression="&quot;Do you want to send a mail address ?&quot;" newline="True"/>
+            <input variable="YesOrNo"/>
+            <if expression="YesOrNo == &quot;yes&quot;">
+                <then>
+                    <declare name="NewOrNot" type="String" array="False" size=""/>
+                    <output expression="&quot;Do you want to send the mail for a new adress ?&quot;" newline="True"/>
+                    <input variable="NewOrNot"/>
+                    <if expression="NewOrNot==&quot;yes&quot;">
+                        <then>
+                            <output expression="&quot;Please, fill these fields&quot;" newline="True"/>
+                            <declare name="NewFlatNumber, NewHouseNumber, NewPostalCode" type="Integer" array="False" size=""/>
+                            <declare name="NewStreetName, NewAreaOrDistrictName, NewCityName, NewGovernorateName, NewCountry" type="String" array="False" size=""/>
+                            <output expression="&quot;FlatNumber&quot;" newline="True"/>
+                            <input variable="NewFlatNumber"/>
+                            <output expression="&quot;HouseNumber&quot;" newline="True"/>
+                            <input variable="NewHouseNumber"/>
+                            <output expression="&quot;StreetName&quot;" newline="True"/>
+                            <input variable="NewStreetName"/>
+                            <output expression="&quot;AreaOrDistrictName&quot;" newline="True"/>
+                            <input variable="NewAreaOrDistrictName"/>
+                            <output expression="&quot;CityName&quot;" newline="True"/>
+                            <input variable="NewCityName"/>
+                            <output expression="&quot;GovernorateName&quot;" newline="True"/>
+                            <input variable="NewGovernrateName"/>
+                            <output expression="&quot;Country&quot;" newline="True"/>
+                            <input variable="NewCountry"/>
+                            <output expression="&quot;PostalCode&quot;" newline="True"/>
+                            <input variable="NewPostalCode"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;The address will be filled automatically from the previous data&quot;" newline="True"/>
+                            <output expression="FlatNumber" newline="True"/>
+                            <output expression="HouseNumber" newline="True"/>
+                            <output expression="StreetName" newline="True"/>
+                            <output expression="AreaOrDistrictName" newline="True"/>
+                            <output expression="CityName" newline="True"/>
+                            <output expression="GovernorateName" newline="True"/>
+                            <output expression="Country" newline="True"/>
+                            <output expression="PostalCode" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="StudentContacts" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="HomePhoneNumber, MobileNumber" type="Integer" array="False" size=""/>
+            <declare name="email" type="String" array="False" size=""/>
+            <output expression="&quot;Please enter your contact e_mail: &quot;" newline="True"/>
+            <input variable="email"/>
+            <output expression="&quot;Please enter your home phone number: &quot;" newline="True"/>
+            <input variable="HomePhoneNumber"/>
+            <output expression="&quot;Please enter your mobile number: &quot;" newline="True"/>
+            <input variable="MobileNumber"/>
+        </body>
+    </function>
+    <function name="StudentGPA" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
